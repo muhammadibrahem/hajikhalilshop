@@ -2,6 +2,8 @@ const nav = document.getElementById('site-nav');
 const navLinks = document.querySelectorAll('.nav-links a');
 const navToggle = document.querySelector('.nav-toggle');
 const mobileMenu = document.querySelector('.nav-links');
+const topbarToggle = document.querySelector('.topbar-toggle');
+const topbarMenu = document.querySelector('.topbar-menu');
 const backToTop = document.querySelector('.back-to-top');
 const fadeItems = document.querySelectorAll('.fade-up');
 const counters = document.querySelectorAll('.counter');
@@ -19,6 +21,14 @@ const setActiveLink = () => {
 
 navToggle?.addEventListener('click', () => {
   mobileMenu?.classList.toggle('open');
+});
+
+topbarToggle?.addEventListener('click', () => {
+  topbarMenu?.classList.toggle('open');
+});
+
+document.querySelectorAll('.topbar-menu a').forEach(link => {
+  link.addEventListener('click', () => topbarMenu?.classList.remove('open'));
 });
 
 document.querySelectorAll('.nav-links a').forEach(link => {
@@ -107,7 +117,7 @@ const renderSavedReviews = () => {
     card.className = 'review-card';
     card.innerHTML = `
       <div>${'?'.repeat(item.rating)}${'?'.repeat(5 - item.rating)}</div>
-      ${item.text ? `<p>“${item.text}”</p>` : ''}
+      ${item.text ? `<p>ï¿½${item.text}ï¿½</p>` : ''}
       <strong>${item.name || 'Anonymous'}</strong>
     `;
     reviewsList.appendChild(card);
