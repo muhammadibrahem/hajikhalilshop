@@ -132,12 +132,14 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1220px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 18px 24px;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  border:none;
+  border-radius : 20px
+  /* border: 1px solid rgba(226, 232, 240, 0.9); */
 }
 .site-nav.scrolled {
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
